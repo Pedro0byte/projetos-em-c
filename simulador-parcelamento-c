@@ -1,0 +1,51 @@
+#include <string.h>
+#include <stdio.h>
+
+int main () {
+
+float valor;
+float juros;
+int quantidadeParcelas;
+float valorParcelas;
+int contador;
+
+valor = 0;
+juros = 0;
+quantidadeParcelas = 0;
+valorParcelas = 0;
+contador = 0;
+
+printf ("Qual valor do produto: ");
+scanf ("%f" , &valor);
+
+printf ("Em quantas vezes deseja parcelar: ");
+scanf ("%d" , &quantidadeParcelas);
+
+printf ("Quantos porcento de juros: ");
+scanf ("%f" , &juros);
+
+if (juros == 0) {
+
+while (contador < quantidadeParcelas) {
+    contador = contador + 1;
+    valorParcelas = valor / quantidadeParcelas;
+
+    printf ("Parcela %d: %1.2f\n" , contador , valorParcelas);
+
+
+}
+
+}
+
+else {
+    while (contador < quantidadeParcelas) {
+        contador = contador + 1;
+        valorParcelas = (((juros / 100) * valor) + valor ) / quantidadeParcelas;
+
+        printf ("Parcelas %d: %1.2f\n" , contador , valorParcelas);
+    }
+}
+
+
+
+}
